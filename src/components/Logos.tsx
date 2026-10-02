@@ -1,9 +1,10 @@
 import React from 'react';
 
-interface LogoProps {
+export interface LogoProps {
   className?: string;
   variant?: 'light' | 'dark' | 'color';
   showSubtitle?: boolean;
+  compact?: boolean;
 }
 
 // 1. Narrow Gauge Restaurant Logo (with authentic Train sign & refined typography)
@@ -11,7 +12,9 @@ export const NarrowGaugeRestaurantLogo: React.FC<LogoProps & { showTrainImage?: 
   className = 'h-10',
   showSubtitle = true,
   showTrainImage = true,
+  compact = false,
 }) => {
+  const displaySubtitle = compact ? false : showSubtitle;
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {showTrainImage && (
@@ -36,7 +39,7 @@ export const NarrowGaugeRestaurantLogo: React.FC<LogoProps & { showTrainImage?: 
             RESTAURANT
           </span>
         </div>
-        {showSubtitle && (
+        {displaySubtitle && (
           <span className="text-[10px] tracking-[0.25em] text-[#9B9B9B] uppercase font-sans">
             North Indian · Chinese · Pizza
           </span>
@@ -50,7 +53,9 @@ export const NarrowGaugeRestaurantLogo: React.FC<LogoProps & { showTrainImage?: 
 export const UknowCafeLogo: React.FC<LogoProps> = ({
   className = 'h-10',
   showSubtitle = true,
+  compact = false,
 }) => {
+  const displaySubtitle = compact ? false : showSubtitle;
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
       {/* Visual Logo mark matching user's image */}
@@ -124,7 +129,7 @@ export const UknowCafeLogo: React.FC<LogoProps> = ({
         </div>
 
         {/* Subtitle: "— by Narrow Gauge —" */}
-        {showSubtitle && (
+        {displaySubtitle && (
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className="w-3 h-[1px] bg-[#9B9B9B]" />
             <span className="text-[9px] font-sans tracking-widest uppercase text-[#9B9B9B]">
@@ -143,7 +148,9 @@ export const NGCattersLogo: React.FC<LogoProps & { showImage?: boolean }> = ({
   className = 'h-10',
   showSubtitle = true,
   showImage = true,
+  compact = false,
 }) => {
+  const displaySubtitle = compact ? false : showSubtitle;
   return (
     <div className={`flex items-center gap-3.5 ${className}`}>
       {/* Official NG Caterers Emblem Image */}
@@ -169,7 +176,7 @@ export const NGCattersLogo: React.FC<LogoProps & { showImage?: boolean }> = ({
             CATERING
           </span>
         </div>
-        {showSubtitle && (
+        {displaySubtitle && (
           <span className="text-[10px] tracking-[0.25em] text-[#9B9B9B] uppercase font-sans">
             by Narrow Gauge · Events & Banquets
           </span>
@@ -180,7 +187,11 @@ export const NGCattersLogo: React.FC<LogoProps & { showImage?: boolean }> = ({
 };
 
 // 4. Parent Brand Logo
-export const ParentBrandLogo: React.FC<{ compact?: boolean }> = ({ compact = false }) => {
+export const ParentBrandLogo: React.FC<LogoProps> = ({
+  compact = false,
+  className = '',
+  showSubtitle = true,
+}) => {
   return (
     <div className="flex items-center gap-3">
       <div className="w-9 h-9 border border-[#8C571E]/40 dark:border-accent-champagne/40 bg-[#8C571E]/10 dark:bg-white/[0.03] flex items-center justify-center font-serif text-[#8C571E] dark:text-accent-champagne text-xs font-bold tracking-widest shadow-sm">
