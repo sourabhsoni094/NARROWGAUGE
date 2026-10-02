@@ -1,0 +1,401 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color-scheme: dark light;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body {
+    background-color: #0B0B0B;
+    color: #F5F2EA;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* DAY / LIGHT MODE GLOBAL BASE OVERRIDES */
+  html.light body {
+    background-color: #F8F5EE;
+    color: #141210;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0B0B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+  }
+
+  html.light ::-webkit-scrollbar-track {
+    background: #F8F5EE;
+  }
+  html.light ::-webkit-scrollbar-thumb {
+    background: #D5CDC0;
+  }
+  html.light ::-webkit-scrollbar-thumb:hover {
+    background: #B8AF9F;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Subtle glass & backdrop blur */
+  .subtle-glass {
+    background: rgba(18, 18, 18, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  html.light .subtle-glass {
+    background: rgba(248, 245, 238, 0.94) !important;
+  }
+}
+
+/* =========================================================
+   DAY (LIGHT) MODE THEME OVERRIDES
+   Transforms the entire experience into a warm, luminous,
+   ultra-premium hospitality aesthetic with high contrast text
+========================================================= */
+
+/* --- Primary Backgrounds --- */
+html.light .bg-\[\#0B0B0B\],
+html.light [class*="bg-[#0B0B0B]"] {
+  background-color: #F8F5EE !important;
+}
+
+html.light .bg-\[\#0D0D0D\],
+html.light [class*="bg-[#0D0D0D]"] {
+  background-color: #F1ECE0 !important;
+}
+
+html.light .bg-\[\#121212\],
+html.light [class*="bg-[#121212]"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#141414\],
+html.light [class*="bg-[#141414]"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#161616\],
+html.light [class*="bg-[#161616]"] {
+  background-color: #FAF6EF !important;
+}
+
+html.light .bg-\[\#181818\],
+html.light [class*="bg-[#181818]"] {
+  background-color: #ECE4D4 !important;
+}
+
+html.light .bg-\[\#080808\],
+html.light [class*="bg-[#080808]"] {
+  background-color: #E8E0CE !important;
+}
+
+html.light .bg-\[\#0E0E0E\],
+html.light [class*="bg-[#0E0E0E]"] {
+  background-color: #F2EBDF !important;
+}
+
+/* Modal and Drawer overlays */
+html.light .bg-black\/85,
+html.light .bg-black\/95,
+html.light .bg-black\/98 {
+  background-color: rgba(248, 245, 238, 0.96) !important;
+}
+
+html.light .bg-black\/40,
+html.light .bg-black\/60 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Semi-transparent white layers on dark backgrounds -> subtle warm tint in light mode */
+html.light .bg-white\/\[0\.02\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.05\],
+html.light .bg-white\/\[0\.06\] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* --- High-Contrast Typography in Day Mode --- */
+
+/* All primary headings, titles and body text */
+html.light [class*="text-[#F5F2EA]"],
+html.light .text-\[\#F5F2EA\] {
+  color: #141210 !important;
+}
+
+/* Secondary & descriptive text */
+html.light [class*="text-[#9B9B9B]"],
+html.light .text-\[\#9B9B9B\] {
+  color: #4A443C !important;
+}
+
+/* Translucent whites */
+html.light [class*="text-white\/40"],
+html.light [class*="text-white\/60"] {
+  color: #6E665B !important;
+}
+
+html.light [class*="text-white\/20"] {
+  color: #A39B8F !important;
+}
+
+/* Accent Champagne in light mode: deep rich golden bronze */
+html.light [class*="text-accent-champagne"],
+html.light .text-accent-champagne {
+  color: #8C571E !important;
+}
+
+/* Accent Gold in light mode: deep royal gold */
+html.light [class*="text-accent-gold"],
+html.light .text-accent-gold {
+  color: #8A6008 !important;
+}
+
+/* Restaurant Accent in light mode: deep warm terracotta */
+html.light [class*="text-[#D99B59]"],
+html.light .text-\[\#D99B59\] {
+  color: #B24F10 !important;
+}
+
+/* Cafe Accent in light mode: deep roasted caramel */
+html.light [class*="text-[#C89666]"],
+html.light .text-\[\#C89666\] {
+  color: #8A4818 !important;
+}
+
+/* --- Clean Borders in Day Mode --- */
+html.light [class*="border-white\/\[0\.08\]"],
+html.light [class*="border-white\/\[0\.06\]"],
+html.light [class*="border-white\/\[0\.05\]"],
+html.light [class*="border-white\/\[0\.04\]"] {
+  border-color: rgba(45, 35, 25, 0.1) !important;
+}
+
+html.light [class*="border-white\/\[0\.1\]"],
+html.light [class*="border-white\/\[0\.12\]"],
+html.light [class*="border-white\/\[0\.14\]"],
+html.light [class*="border-white\/\[0\.15\]"],
+html.light [class*="border-white\/10"] {
+  border-color: rgba(45, 35, 25, 0.15) !important;
+}
+
+html.light [class*="border-white\/20"],
+html.light [class*="border-white\/30"] {
+  border-color: rgba(45, 35, 25, 0.22) !important;
+}
+
+/* Badge accents */
+html.light .bg-accent-champagne\/10 {
+  background-color: rgba(140, 87, 30, 0.1) !important;
+}
+html.light .border-accent-champagne\/40 {
+  border-color: rgba(140, 87, 30, 0.35) !important;
+}
+html.light .bg-accent-gold\/10,
+html.light .bg-accent-gold\/20 {
+  background-color: rgba(138, 96, 8, 0.1) !important;
+}
+html.light .border-accent-gold\/40,
+html.light .border-accent-gold\/50 {
+  border-color: rgba(138, 96, 8, 0.35) !important;
+}
+html.light .bg-\[\#D99B59\]\/10,
+html.light .bg-\[\#D99B59\]\/20 {
+  background-color: rgba(178, 79, 16, 0.1) !important;
+}
+html.light .border-\[\#D99B59\]\/30,
+html.light .border-\[\#D99B59\]\/40 {
+  border-color: rgba(178, 79, 16, 0.35) !important;
+}
+html.light .bg-\[\#C89666\]\/10 {
+  background-color: rgba(138, 72, 24, 0.1) !important;
+}
+html.light .border-\[\#C89666\]\/40 {
+  border-color: rgba(138, 72, 24, 0.35) !important;
+}
+
+/* --- Solid Accent CTA Buttons in Day Mode (White Text for Maximum Contrast) --- */
+html.light .bg-accent-champagne,
+html.light button.bg-accent-champagne,
+html.light a.bg-accent-champagne {
+  background-color: #8C571E !important;
+  color: #FFFFFF !important;
+}
+html.light .bg-accent-champagne:hover {
+  background-color: #754716 !important;
+}
+
+html.light .bg-accent-gold,
+html.light button.bg-accent-gold,
+html.light a.bg-accent-gold {
+  background-color: #8A6008 !important;
+  color: #FFFFFF !important;
+}
+html.light .bg-accent-gold:hover {
+  background-color: #704E05 !important;
+}
+
+html.light .bg-\[\#D99B59\],
+html.light button.bg-\[\#D99B59\],
+html.light a.bg-\[\#D99B59\] {
+  background-color: #B24F10 !important;
+  color: #FFFFFF !important;
+}
+html.light .bg-\[\#D99B59\]:hover {
+  background-color: #96410B !important;
+}
+
+html.light .bg-\[\#C89666\],
+html.light button.bg-\[\#C89666\],
+html.light a.bg-\[\#C89666\] {
+  background-color: #8A4818 !important;
+  color: #FFFFFF !important;
+}
+html.light .bg-\[\#C89666\]:hover {
+  background-color: #703810 !important;
+}
+
+/* Ensure text inside these solid action buttons is white */
+html.light .bg-accent-champagne span,
+html.light .bg-accent-gold span,
+html.light .bg-\[\#D99B59\] span,
+html.light .bg-\[\#C89666\] span,
+html.light .bg-accent-champagne svg,
+html.light .bg-accent-gold svg,
+html.light .bg-\[\#D99B59\] svg,
+html.light .bg-\[\#C89666\] svg {
+  color: #FFFFFF !important;
+}
+
+/* Outlined buttons in Day mode */
+html.light button.border-white\/\[0\.14\],
+html.light a.border-white\/\[0\.14\],
+html.light button.border-white\/\[0\.15\],
+html.light a.border-white\/\[0\.15\] {
+  border-color: rgba(45, 35, 25, 0.22) !important;
+  background-color: #FFFFFF !important;
+  color: #141210 !important;
+}
+
+/* --- Form Inputs & Selects in Day Mode --- */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #141210 !important;
+  border-color: rgba(45, 35, 25, 0.2) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #9C9486 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #8C571E !important;
+  outline: none !important;
+}
+
+/* --- Hero Section in Day Mode --- */
+html.light #hero .absolute.inset-0.bg-gradient-to-t {
+  background: linear-gradient(to top, #F8F5EE 10%, rgba(248, 245, 238, 0.94) 55%, rgba(248, 245, 238, 0.82) 100%) !important;
+}
+
+html.light #hero .bg-\[radial-gradient\(circle_at_center\,_transparent_0\%\,_rgba\(11\,11\,11\,0\.6\)_100\%\)\] {
+  background: radial-gradient(circle at center, transparent 0%, rgba(248, 245, 238, 0.45) 100%) !important;
+}
+
+html.light #hero .bg-accent-champagne\/40 {
+  background-color: #8C571E !important;
+}
+
+/* --- Image Scrims and Photo Captions in Day Mode --- */
+/* For gallery and showcase images, preserve dark scrim with white caption text for readability */
+html.light .group .absolute.inset-0.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(14, 12, 10, 0.92) 0%, rgba(14, 12, 10, 0.3) 60%, transparent 100%) !important;
+}
+
+html.light .group .absolute.bottom-6 p,
+html.light .group .absolute.bottom-4 p,
+html.light .group .absolute.bottom-6 span,
+html.light .group .absolute.bottom-4 span,
+html.light .group .absolute.bottom-0 h4,
+html.light .group .absolute.bottom-0 p {
+  color: #FFFFFF !important;
+}
+
+html.light .group .absolute.bottom-0 p.text-\[\#9B9B9B\] {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Google Maps in Day Mode */
+html.light iframe {
+  filter: contrast(95%) brightness(98%) !important;
+}
+
+/* Card hover enhancements in day mode */
+html.light article.border:hover,
+html.light div.border:hover {
+  box-shadow: 0 10px 25px -4px rgba(45, 35, 25, 0.08);
+}
+
+/* --- Clean Print / Save PDF Styles for Menu --- */
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print,
+  button,
+  .sticky {
+    display: none !important;
+  }
+
+  body,
+  html,
+  main,
+  div {
+    background: #ffffff !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+  }
+
+  .min-h-screen {
+    min-height: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Keep printed menu cards clean, compact & legible */
+  article,
+  .grid > div {
+    page-break-inside: avoid !important;
+    border: 1px solid #e0e0e0 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  h1, h2, h3, h4, p, span {
+    color: #111111 !important;
+  }
+}
+
