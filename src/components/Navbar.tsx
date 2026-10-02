@@ -40,10 +40,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 py-3.5 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-200 py-3.5 ${
           isDark
-            ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-white/[0.08] shadow-xl'
-            : 'bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5DDD0] shadow-sm'
+            ? 'bg-[#0A0A0B]/90 backdrop-blur-md border-b border-white/[0.08]'
+            : 'bg-[#FAF9F6]/90 backdrop-blur-md border-b border-neutral-200'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">

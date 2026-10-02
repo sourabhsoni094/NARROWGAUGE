@@ -76,7 +76,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F5F2EA] flex flex-col font-sans selection:bg-accent-champagne/30 selection:text-[#F5F2EA]">
+    <div className="min-h-screen bg-[#FAF9F6] text-[#141210] dark:bg-[#0A0A0B] dark:text-[#F5F2EA] flex flex-col font-sans transition-colors duration-200 selection:bg-accent-champagne/30 selection:text-inherit">
       {/* Sticky Top Navbar - 100% Uniform & Consistent on All Pages */}
       <Navbar
         currentPage={currentPage}
